@@ -18,8 +18,8 @@ Little game reimplement original Google Chrome "T-Tex runner".
 ## Control
 	 
 Action    | Key
-----------|-----
+----------|---
 Jump      | __`Space` `W` `ArrowUp`__
 Fast Fall | __`Ctrl` `S` `ArrowDown`__
-Restart   | __`Enter` `R`__
+Restart   | __`Enter` `R` `MouseButton`__
 
