@@ -14,7 +14,7 @@ public class HitBox extends Pane {
         rect.setWidth(w);
         getChildren().add(rect);
 
-        Main.root.getChildren().add(this);
+        Main.rootGamePlay.getChildren().add(this);
     }
 
     void move(double x, double y) {

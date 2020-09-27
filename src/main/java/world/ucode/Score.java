@@ -14,7 +14,7 @@ class Score extends Pane {
         setTranslateX(450);
         setTranslateY(15);
 
-        ImageView imgvHi = new ImageView(new Image(getClass().getResourceAsStream("HI.png")));
+        ImageView imgvHi = new ImageView(new Image(getClass().getResourceAsStream("images/HI.png")));
         counter = 0;
         lblHiScore = new Label("" + (int) counter);
         lblCurrScore = new Label("" + (int) counter);

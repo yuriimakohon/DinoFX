@@ -8,9 +8,16 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+    testImplementation 'junit:junit:4.13'
+    compile group: 'org.openjfx', name: 'javafx-controls', version: '13'
+    compile group: 'org.openjfx', name: 'javafx-fxml', version: '13 '
+}
+
 javafx {
     version = "13"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = [ 'javafx.controls', 'javafx.fxml']
 }
 
 mainClassName = "$moduleName/world.ucode.Main"

@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
+
 public class Character extends Pane {
     HitBox hitBox;
     Point2D velocity;
@@ -14,7 +15,7 @@ public class Character extends Pane {
     ImageView imgv;
 
     public Character() {
-        imgv = new ImageView(new Image(getClass().getResourceAsStream("Dino.png")));
+        imgv = new ImageView(new Image(getClass().getResourceAsStream("images/Dino.png")));
         hitBox = new HitBox(37,29, Color.rgb(0, 255, 0, 0));    // Hit-box Color
 
         imgv.setViewport(new Rectangle2D(0, 0, 44, 47));
@@ -30,9 +31,9 @@ public class Character extends Pane {
         boolean moveDown = value > 0;
 
         for (int i = 0; i < Math.abs(value); i++) {
-            for (Obstacle o : Main.obstacles) {
+            for (Obstacle o : GamePlay.obstacles) {
                 if (o.hitBox.getBoundsInParent().intersects(hitBox.getBoundsInParent()))
-                    Main.gameOver = true;
+                    GamePlay.gameOver = true;
             }
             if (i < Math.abs(value) * 0.5) {
                 if (moveDown && getTranslateY() < groundY)
@@ -53,14 +54,14 @@ public class Character extends Pane {
     private int previous = 0;
     private int offset;
     private void changeSprite() {
-        if (Main.gameOver) {
+        if (GamePlay.gameOver) {
             offset = 44 * 3;
         } else if (getTranslateY() < groundY) {
             offset = 44 * 2;
-        } else if (Main.score.get() != previous ) {
+        } else if (GamePlay.score.get() != previous ) {
             if (offset >= 44 * 2)
                 offset = 0;
-            previous = Main.score.get();
+            previous = GamePlay.score.get();
             if (imgv.getViewport().getMinX() == 44)
                 offset = 0;
             else
@@ -70,7 +71,14 @@ public class Character extends Pane {
     }
 
     void jump() {
-        if (getTranslateY() >= groundY)
+        if (getTranslateY() >= groundY) {
+
             velocity = new Point2D(0, -20);
+        }
+    }
+
+    void down() {
+        if (getTranslateY() <= groundY)
+            velocity = new Point2D(0, 20);
     }
 }

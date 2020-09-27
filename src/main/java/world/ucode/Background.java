@@ -13,8 +13,8 @@ public class Background extends Pane {
     static boolean firstLand = true;
 
     public Background() {
-        Image landSample = new Image(getClass().getResourceAsStream("Land.png"));
-        Image cloudSample = new Image(getClass().getResourceAsStream("Cloud.png"));
+        Image landSample = new Image(getClass().getResourceAsStream("images/Land.png"));
+        Image cloudSample = new Image(getClass().getResourceAsStream("images/Cloud.png"));
 
         land1 = new ImageView(landSample);
         land2 = new ImageView(landSample);
@@ -62,7 +62,7 @@ public class Background extends Pane {
             land1.setTranslateX(1200 + land2.getTranslateX());
             firstLand = true;
         }
-        land1.setTranslateX(land1.getTranslateX() - Main.speed);
-        land2.setTranslateX(land2.getTranslateX() - Main.speed);
+        land1.setTranslateX(land1.getTranslateX() - GamePlay.speed);
+        land2.setTranslateX(land2.getTranslateX() - GamePlay.speed);
     }
 }

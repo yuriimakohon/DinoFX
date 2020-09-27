@@ -6,17 +6,17 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 public class Obstacle extends Pane {
-    private static final Image imgCactus1 = new Image(Obstacle.class.getResourceAsStream("Cactus_1.png"));
-    private static final Image imgCactus2 = new Image(Obstacle.class.getResourceAsStream("Cactus_2.png"));
-    private static final Image imgCactus3 = new Image(Obstacle.class.getResourceAsStream("Cactus_3.png"));
-    private static final Image imgCactus4 = new Image(Obstacle.class.getResourceAsStream("Cactus_4.png"));
-    private static final Image imgCactus5 = new Image(Obstacle.class.getResourceAsStream("Cactus_5.png"));
-    private static final Image imgCactus6 = new Image(Obstacle.class.getResourceAsStream("Cactus_6.png"));
-    private ImageView imgv;
+    private static final Image imgCactus1 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_1.png"));
+    private static final Image imgCactus2 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_2.png"));
+    private static final Image imgCactus3 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_3.png"));
+    private static final Image imgCactus4 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_4.png"));
+    private static final Image imgCactus5 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_5.png"));
+    private static final Image imgCactus6 = new Image(Obstacle.class.getResourceAsStream("images/Cactus_6.png"));
     HitBox hitBox;
 
     public Obstacle(int x) {
         int obstacleRand = (int)(Math.random() * 6);
+        ImageView imgv;
 
         if (obstacleRand == 0)
             imgv = new ImageView(imgCactus1);
@@ -43,7 +43,7 @@ public class Obstacle extends Pane {
         );
 
         getChildren().addAll(imgv);
-        Main.root.getChildren().add(this);
+        Main.rootGamePlay.getChildren().add(this);
     }
 
     private void generateObstaclePos(int x) {
@@ -51,7 +51,7 @@ public class Obstacle extends Pane {
     }
 
     public void move() {
-        setTranslateX(getTranslateX() - Main.speed);
+        setTranslateX(getTranslateX() - GamePlay.speed);
         hitBox.move(getTranslateX(), getTranslateY() + 3);
     }
 }
