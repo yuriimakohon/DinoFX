@@ -1,6 +1,6 @@
 # DinoFX
 
-Little game reimplement original Google Chrome "T-Tex runner".
+Little game reimplement original Google Chrome "T-Rex runner".
 
 <p align="center">
   <img src="https://i.ibb.co/bWcfGpG/photo5443094174451740500.jpg" alt="photo5443094174451740500" border="0">
